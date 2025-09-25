@@ -203,143 +203,154 @@ class CategoryItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: isEven
               ? [
-                  Container(
-                    height: 142,
-                    width: 190,
-                    decoration: BoxDecoration(
-                      // color: themeColor,
-                      borderRadius: BorderRadius.circular(30),
-                      image: DecorationImage(
-                        image: AssetImage(assetImage),
-                        alignment: Alignment.center,
-                        fit: BoxFit.contain,
+                  Expanded(
+                    flex: 6,
+                    child: Container(
+                      height: 142,
+                      decoration: BoxDecoration(
+                        // color: themeColor,
+                        borderRadius: BorderRadius.circular(30),
+                        image: DecorationImage(
+                          image: AssetImage(assetImage),
+                          alignment: Alignment.center,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                  Container(
-                    height: 142,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: themeColor,
-                      borderRadius: BorderRadius.circular(30),
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/splash.png"),
-                        alignment: Alignment.topRight,
+                  SizedBox(width: 10),
+
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      height: 142,
+                      decoration: BoxDecoration(
+                        color: themeColor,
+                        borderRadius: BorderRadius.circular(30),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/splash.png"),
+                          alignment: Alignment.topRight,
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Center(
-                          child: Text(
-                            "Join",
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontFamily: "Inter",
-                              fontWeight: FontWeight.w900,
-                              color: jwhiteColor,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(
+                            child: Text(
+                              "Join",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontFamily: "Inter",
+                                fontWeight: FontWeight.w900,
+                                color: jwhiteColor,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "As a",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: "Inter",
-                                  fontWeight: FontWeight.w500,
-                                  color: jyellowColor,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "As a",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "Inter",
+                                    fontWeight: FontWeight.w500,
+                                    color: jyellowColor,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                type,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: "Inter",
-                                  fontWeight: FontWeight.bold,
-                                  color: jyellowColor,
+                                Text(
+                                  type,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "Inter",
+                                    fontWeight: FontWeight.bold,
+                                    color: jyellowColor,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ]
               : [
-                  Container(
-                    height: 142,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: themeColor,
-                      borderRadius: BorderRadius.circular(30),
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/splash.png"),
-                        alignment: Alignment.topRight,
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      height: 142,
+                      decoration: BoxDecoration(
+                        color: themeColor,
+                        borderRadius: BorderRadius.circular(30),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/splash.png"),
+                          alignment: Alignment.topRight,
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Center(
-                          child: Text(
-                            "Join",
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontFamily: "Inter",
-                              fontWeight: FontWeight.w900,
-                              color: jwhiteColor,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(
+                            child: Text(
+                              "Join",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontFamily: "Inter",
+                                fontWeight: FontWeight.w900,
+                                color: jwhiteColor,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "As a",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: "Inter",
-                                  fontWeight: FontWeight.w500,
-                                  color: jyellowColor,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "As a",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "Inter",
+                                    fontWeight: FontWeight.w500,
+                                    color: jyellowColor,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                type,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: "Inter",
-                                  fontWeight: FontWeight.bold,
-                                  color: jyellowColor,
+                                Text(
+                                  type,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "Inter",
+                                    fontWeight: FontWeight.bold,
+                                    color: jyellowColor,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  Container(
-                    height: 142,
-                    width: 190,
-                    decoration: BoxDecoration(
-                      // color: themeColor,
-                      borderRadius: BorderRadius.circular(30),
-                      image: DecorationImage(
-                        image: AssetImage(assetImage),
-                        alignment: Alignment.center,
-                        fit: BoxFit.contain,
+                  SizedBox(width: 10),
+                  Expanded(
+                    flex: 6,
+                    child: Container(
+                      height: 142,
+                      decoration: BoxDecoration(
+                        // color: themeColor,
+                        borderRadius: BorderRadius.circular(30),
+                        image: DecorationImage(
+                          image: AssetImage(assetImage),
+                          alignment: Alignment.center,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),

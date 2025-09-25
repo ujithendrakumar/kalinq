@@ -34,32 +34,22 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       backgroundColor: themeColor,
-      body: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            height: size.height * 0.5,
-            child: Container(color: themeColor),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              themeColor, // Top half
+              Colors.white, // Bottom half
+            ],
+            stops: [0.5, 0.5], // Divide exactly half
           ),
-
-          // Bottom Half - White
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: size.height * 0.5,
-            child: Container(color: Colors.white),
-          ),
-
-          // Example Content in Center
-          Center(
-            child: Column(
-              children: [TopContent(), LoginForm(rememberMe: false)],
-            ),
-          ),
-        ],
+        ),
+        child: SingleChildScrollView(
+          child: Column(children: [TopContent(), LoginForm(rememberMe: false)]),
+        ),
       ),
     );
   }

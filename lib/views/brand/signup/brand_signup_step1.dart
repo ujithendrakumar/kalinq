@@ -95,7 +95,10 @@ class TopContent extends StatelessWidget {
             color: jyellowColor,
             borderRadius: BorderRadius.circular(18),
           ),
-          child: Text("Brand"),
+          child: Text(
+            "Brand",
+            style: TextStyle(color: themeColor, fontWeight: FontWeight.bold),
+          ),
         ),
         SizedBox(height: 16),
       ],

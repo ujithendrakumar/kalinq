@@ -34,32 +34,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
       backgroundColor: themeColor,
-      body: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            height: size.height * 0.5,
-            child: Container(color: themeColor),
-          ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
 
-          // Bottom Half - White
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: size.height * 0.5,
-            child: Container(color: Colors.white),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              themeColor, // Top half
+              Colors.white, // Bottom half
+            ],
+            stops: [0.5, 0.5], // Divide exactly half
           ),
-
-          // Example Content in Center
-          Center(
-            child: Column(
-              children: [TopContent(), CategoryItems(rememberMe: false)],
-            ),
-          ),
-        ],
+        ),
+        child: Column(
+          children: [TopContent(), CategoryItems(rememberMe: false)],
+        ),
       ),
     );
   }
@@ -71,7 +62,7 @@ class TopContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Center(
@@ -124,10 +115,22 @@ class TopContent extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 15),
             ],
           ),
         ),
+        Container(
+          margin: EdgeInsets.only(top: 10),
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 6),
+          decoration: BoxDecoration(
+            color: jyellowColor,
+            borderRadius: BorderRadius.circular(18),
+          ),
+          child: Text(
+            "Select Your Category!",
+            style: TextStyle(color: themeColor, fontWeight: FontWeight.bold),
+          ),
+        ),
+        SizedBox(height: 15),
       ],
     );
   }

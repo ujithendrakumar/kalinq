@@ -101,7 +101,10 @@ class TopContent extends StatelessWidget {
             color: jyellowColor,
             borderRadius: BorderRadius.circular(18),
           ),
-          child: Text("Brand"),
+          child: Text(
+            "Brand",
+            style: TextStyle(color: themeColor, fontWeight: FontWeight.bold),
+          ),
         ),
         SizedBox(height: 10),
       ],
@@ -124,7 +127,6 @@ class _FormElementsListState extends State<FormElementsList> {
   Widget build(BuildContext context) {
     return Container(
       height: 350,
-
       width: MediaQuery.of(context).size.width * 0.85,
       padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
@@ -184,7 +186,7 @@ class _FormElementsListState extends State<FormElementsList> {
               ),
             ),
             controller: pinController,
-            autofocus: true,
+            autofocus: false,
           ),
           const SizedBox(height: 16),
           Row(

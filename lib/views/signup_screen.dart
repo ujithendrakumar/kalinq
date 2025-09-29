@@ -158,6 +158,7 @@ class CategoryItems extends StatelessWidget {
             assetImage: "assets/images/influencer.png",
             type: 'Creator',
             onPressed: () {
+              Get.toNamed("creator/step1");
               print("Creator Clicked");
             },
           ),
@@ -176,6 +177,7 @@ class CategoryItems extends StatelessWidget {
             type: 'Partner / Agency',
             onPressed: () {
               print("Partner / Agency Clicked");
+              Get.toNamed("/partner/step1");
             },
           ),
         ],

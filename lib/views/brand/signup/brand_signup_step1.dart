@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field2/intl_phone_field.dart';
 import 'package:smart_auth/smart_auth.dart';
 
+import '../../../components/custom_field_with_name.dart';
 import '../../../utils/theme.dart';
 
 class BrandSignUpStep1 extends StatefulWidget {
@@ -139,192 +140,38 @@ class _FormElementsListState extends State<FormElementsList> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          CustomFormFieldWithName(
+            controller: TextEditingController(),
+            hint: 'Brand Name',
+            title: 'Brand Name',
+            validator: null,
+            keyboardType: TextInputType.text,
+          ),
+          CustomFormFieldWithName(
+            controller: TextEditingController(),
+            hint: 'Email',
+            title: 'Email',
+            validator: null,
+            keyboardType: TextInputType.emailAddress,
+          ),
+          CustomFormFieldWithName(
+            controller: TextEditingController(),
+            hint: 'Password',
+            title: 'Password',
+            validator: null,
+            keyboardType: TextInputType.text,
+            obscureText: true,
+          ),
+          CustomFormFieldWithName(
+            controller: TextEditingController(),
+            hint: 'Confirm Password',
+            title: 'Confirm Password',
+            validator: null,
+            keyboardType: TextInputType.text,
+            obscureText: true,
+          ),
+
           // Email Field
-          Container(
-            margin: EdgeInsets.only(left: 5, bottom: 3),
-            child: Text("Brand Name", style: TextStyle(fontSize: 12)),
-          ),
-          SizedBox(
-            height: 43,
-            child: TextFormField(
-              style: TextStyle(fontSize: 12),
-              readOnly: false,
-              decoration: InputDecoration(
-                // labelText: 'Email',
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.brown, width: 1),
-                ),
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                ),
-                hintText: "Enter Brand Name",
-                hintStyle: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.normal,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  // borderSide: BorderSide(color: Colors.grey.shade100, width: 1),
-                ),
-              ),
-              keyboardType: TextInputType.text,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter a problem';
-                }
-                // Fixed: Removed invalid email validation for problem field
-                return null;
-              },
-              onChanged: (val) {},
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 5, bottom: 3, top: 10),
-            child: Text("Email", style: TextStyle(fontSize: 12)),
-          ),
-          SizedBox(
-            height: 43,
-            child: TextFormField(
-              style: TextStyle(fontSize: 12),
-              readOnly: false,
-              decoration: InputDecoration(
-                // labelText: 'Email',
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.brown, width: 1),
-                ),
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                ),
-                hintText: "Enter Email",
-                hintStyle: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.normal,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  // borderSide: BorderSide(color: Colors.grey.shade100, width: 1),
-                ),
-              ),
-              keyboardType: TextInputType.emailAddress,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter a problem';
-                }
-                // Fixed: Removed invalid email validation for problem field
-                return null;
-              },
-              onChanged: (val) {},
-            ),
-          ),
-
-          const SizedBox(height: 16),
-
-          // Password Field
-          Container(
-            margin: EdgeInsets.only(left: 5, bottom: 3),
-            child: Text("Password", style: TextStyle(fontSize: 12)),
-          ),
-          SizedBox(
-            height: 43,
-            child: TextFormField(
-              style: TextStyle(fontSize: 12),
-              readOnly: false,
-              decoration: InputDecoration(
-                // labelText: 'Password',
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.brown, width: 1),
-                ),
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                ),
-                hintText: "Enter Password",
-                hintStyle: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.normal,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey.shade100, width: 1),
-                ),
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.visibility_off_outlined,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              keyboardType: TextInputType.emailAddress,
-              obscureText: true,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter a Password';
-                }
-                // Fixed: Removed invalid email validation for problem field
-                return null;
-              },
-              onChanged: (val) {},
-            ),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            margin: EdgeInsets.only(left: 5, bottom: 3),
-            child: Text("Confirm Password", style: TextStyle(fontSize: 12)),
-          ),
-          SizedBox(
-            height: 43,
-            child: TextFormField(
-              style: TextStyle(fontSize: 12),
-              readOnly: false,
-              decoration: InputDecoration(
-                // labelText: 'Password',
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.brown, width: 1),
-                ),
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                ),
-                hintText: "Enter Confirm Password",
-                hintStyle: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.normal,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey.shade100, width: 1),
-                ),
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.visibility_off_outlined,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              keyboardType: TextInputType.emailAddress,
-              obscureText: true,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter a Password';
-                }
-                // Fixed: Removed invalid email validation for problem field
-                return null;
-              },
-              onChanged: (val) {},
-            ),
-          ),
           const SizedBox(height: 16),
           Container(
             margin: EdgeInsets.only(left: 5, bottom: 3),
@@ -338,11 +185,12 @@ class _FormElementsListState extends State<FormElementsList> {
               showCursor: true,
               cursorHeight: 16,
               decoration: InputDecoration(
-                // labelText: 'Phone Number',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(),
-                ),
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                filled: true,
+                fillColor: Colors.grey.shade50,
+                contentPadding: const EdgeInsets.only(top: 16),
               ),
               initialCountryCode: 'IN',
               onTap: () {

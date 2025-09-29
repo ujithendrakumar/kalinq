@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../../utils/theme.dart';
+import '../../../../utils/theme.dart';
 
-class OtpVerification extends StatefulWidget {
-  const OtpVerification({super.key});
+class PartnerOtpVerification extends StatefulWidget {
+  const PartnerOtpVerification({super.key});
 
   @override
-  State<OtpVerification> createState() => _OtpVerificationState();
+  State<PartnerOtpVerification> createState() => PartnerOtpVerificationState();
 }
 
-class _OtpVerificationState extends State<OtpVerification> {
+class PartnerOtpVerificationState extends State<PartnerOtpVerification> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -100,7 +100,7 @@ class TopContent extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
           ),
           child: Text(
-            "Brand",
+            "Creator",
             style: TextStyle(color: themeColor, fontWeight: FontWeight.bold),
           ),
         ),
@@ -198,7 +198,7 @@ class _FormElementsListState extends State<FormElementsList> {
             height: 48,
             child: ElevatedButton(
               onPressed: () {
-                Get.toNamed('brand/step3');
+                Get.toNamed('/login');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: themeColor,

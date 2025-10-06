@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kalinq/utils/theme.dart';
 
+import '../campaign/capaigns_list.dart';
+import '../wallet/wallet.dart';
 import 'home/dashboard.dart';
 
 class BrandHomeScreen extends StatefulWidget {
@@ -67,8 +69,8 @@ class _BrandHomeScreenState extends State<BrandHomeScreen> {
         },
         children: [
           BrandDashboard(),
-          _buildPage('Wallet'),
-          _buildPage('Post Gig'),
+          Wallet(),
+          CampaignList(),
           _buildPage('Kalinq'),
           _buildPage('Profile'),
         ],

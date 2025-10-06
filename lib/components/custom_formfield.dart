@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomFormField extends StatelessWidget {
   const CustomFormField({
@@ -11,6 +12,8 @@ class CustomFormField extends StatelessWidget {
     this.suffix,
     this.enablePrefixIcon = false,
     this.prefixIcon = const Icon(Icons.search, size: 20),
+    this.maxLines = 1,
+    this.inputFormaters,
   });
 
   final TextEditingController controller;
@@ -21,47 +24,48 @@ class CustomFormField extends StatelessWidget {
   final Widget? suffix;
   final bool enablePrefixIcon;
   final Widget prefixIcon;
-
+  final int maxLines;
+  final List<TextInputFormatter>? inputFormaters;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      // height: 65, // keeps field size consistent
-      child: TextFormField(
-        controller: controller,
-        style: const TextStyle(fontSize: 12),
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          filled: true,
-          fillColor: Colors.grey.shade50,
-          hintText: hint,
-          hintStyle: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.normal,
-          ),
-          suffixIcon: suffix,
-          prefixIcon: enablePrefixIcon ? prefixIcon : null,
-          // 👇 Reserve space for error text
-          errorStyle: const TextStyle(
-            fontSize: 10,
-            color: Colors.red,
-            height: 0.8,
-          ),
-          errorMaxLines: 2,
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 12,
-          ),
-          constraints: const BoxConstraints(
-            minHeight: 43,
-            maxHeight: 65, // enough room for error message
-          ),
+    return TextFormField(
+      controller: controller,
+      // style: const TextStyle(fontSize: 14),
+      minLines: 1,
+
+      obscureText: obscureText,
+
+      decoration: InputDecoration(
+        isDense: false,
+        border: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        filled: true,
+        fillColor: Colors.grey.shade100,
+        //  fillColor: Colors.white,
+        hintText: hint,
+        hintStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.normal),
+        suffixIcon: suffix,
+        prefixIcon: enablePrefixIcon ? prefixIcon : null,
+        // 👇 Reserve space for error text
+        errorStyle: const TextStyle(
+          fontSize: 10,
+          color: Colors.red,
+          height: 0.8,
         ),
-        keyboardType: keyboardType,
-        validator: validator,
+        errorMaxLines: 2,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 12,
+        ),
+        constraints: const BoxConstraints(
+          minHeight: 43,
+          maxHeight: 65, // enough room for error message
+        ),
       ),
+      keyboardType: keyboardType,
+      validator: validator,
+      inputFormatters: inputFormaters ?? [],
     );
   }
 }

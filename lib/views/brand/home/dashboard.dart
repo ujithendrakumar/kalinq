@@ -1,8 +1,11 @@
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:kalinq/components/custom_formfield.dart';
 import 'package:kalinq/utils/theme.dart';
+
+import '../components/brand_person_box.dart';
 
 class BrandDashboard extends StatefulWidget {
   const BrandDashboard({super.key});
@@ -111,7 +114,9 @@ class _BrandDashboardState extends State<BrandDashboard> {
                   Expanded(
                     flex: 1,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/notifications');
+                      },
                       icon: const Icon(
                         FeatherIcons.bell,
                         size: 24,
@@ -166,18 +171,7 @@ class _BrandDashboardState extends State<BrandDashboard> {
               shrinkWrap: true,
               itemCount: 10,
               itemBuilder: (context, index) {
-                return ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.grey.shade300,
-                    child: Icon(FeatherIcons.user, color: Colors.grey.shade600),
-                  ),
-                  title: Text('Opportunity ${index + 1}'),
-                  subtitle: Text('Details about opportunity ${index + 1}'),
-                  trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                  onTap: () {
-                    // Handle tap event
-                  },
-                );
+                return BrandPersonBox();
               },
             ),
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kalinq/utils/theme.dart';
+import 'package:toastification/toastification.dart';
 
 class CustomFormField extends StatelessWidget {
   const CustomFormField({
@@ -30,16 +32,17 @@ class CustomFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      // style: const TextStyle(fontSize: 14),
+      style: const TextStyle(fontSize: 13),
       minLines: 1,
-
       obscureText: obscureText,
-
       decoration: InputDecoration(
         isDense: false,
         border: InputBorder.none,
         enabledBorder: InputBorder.none,
-        focusedBorder: InputBorder.none,
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: themeColor.withAlpha(50)),
+          borderRadius: BorderRadius.circular(8),
+        ),
         filled: true,
         fillColor: Colors.grey.shade100,
         //  fillColor: Colors.white,
@@ -48,6 +51,8 @@ class CustomFormField extends StatelessWidget {
         suffixIcon: suffix,
         prefixIcon: enablePrefixIcon ? prefixIcon : null,
         // 👇 Reserve space for error text
+        focusColor: themeColor,
+
         errorStyle: const TextStyle(
           fontSize: 10,
           color: Colors.red,

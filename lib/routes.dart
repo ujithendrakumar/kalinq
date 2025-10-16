@@ -1,5 +1,9 @@
 // lib/routes/routes.dart
 import 'package:get/get.dart';
+import 'package:kalinq/views/campaign/compaign_details.dart';
+import 'package:kalinq/views/kalinq/edior_form.dart';
+import 'package:kalinq/views/notifications/notification_screen.dart';
+import 'package:kalinq/views/wallet/add_wallet.dart';
 
 // Import all screens
 import 'views/campaign/capaigns_list.dart';
@@ -8,6 +12,7 @@ import 'views/campaign/create_campaign.dart';
 import 'views/campaign/order_success_page.dart';
 import 'views/campaign/select_creator.dart';
 import 'views/home_screen.dart';
+import 'views/kalinq/pay_amount.dart';
 import 'views/login_screen.dart';
 import 'views/signup_screen.dart';
 import 'views/deside_screen.dart';
@@ -30,6 +35,7 @@ import 'views/partner/signup/partner_signup_step1.dart';
 import 'views/partner/signup/partner_signup_step3.dart';
 import 'views/partner/signup/partner_otp_verification.dart';
 import 'views/splash_screen.dart';
+import 'views/wallet/withdraw_wallet.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -41,6 +47,7 @@ class AppRoutes {
   static const String notificationScreen = '/notifications';
   static const String createCampaign = '/create-campaign';
   static const String campaignsList = '/campaigns-list';
+  static const String campaignsDetails = '/campaign/details';
   static const String selectCreator = '/create-campaign/select-creator';
   static const String orderSummary =
       '/create-campaign/select-creator/order-summary';
@@ -62,6 +69,11 @@ class AppRoutes {
   static const String partnerStep1 = '/partner/step1';
   static const String partnerOtpVerification = '/partner/otp/verification';
   static const String partnerStep3 = '/partner/step3';
+
+  static const String walletAdd = '/wallet/add';
+  static const String walletWithdraw = '/wallet/withdraw';
+  static const String payAmountToKalinq = '/kalinq/pay';
+  static const String editorFormPage = '/kalinq/ediotor/form';
 
   static final routes = [
     GetPage(name: splash, page: () => const SplashScreen()),
@@ -99,6 +111,13 @@ class AppRoutes {
     GetPage(name: createCampaign, page: () => const CreateCampaign()),
     GetPage(name: selectCreator, page: () => const SelectCreatorScreen()),
     GetPage(name: orderSummary, page: () => const OrderSummary()),
+    GetPage(name: walletAdd, page: () => const AddWallet()),
+    GetPage(name: walletWithdraw, page: () => const WithDrawWallet()),
+    GetPage(name: payAmountToKalinq, page: () => const PayAmountToKalinq()),
+    GetPage(name: editorFormPage, page: () => const EditorFormPage()),
+    GetPage(name: campaignsDetails, page: () => const CampaignDetails()),
+    GetPage(name: notificationScreen, page: () => const NotificationScreen()),
+
     GetPage(
       name: bookingSuccess,
       page: () => const OrderSuccessPage(customerName: ''),

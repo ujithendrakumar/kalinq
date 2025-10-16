@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kalinq/utils/theme.dart';
 
 import '../campaign/capaigns_list.dart';
+import '../kalinq/kalinq_home.dart';
 import '../wallet/wallet.dart';
 import 'home/dashboard.dart';
 
@@ -71,7 +72,7 @@ class _BrandHomeScreenState extends State<BrandHomeScreen> {
           BrandDashboard(),
           Wallet(),
           CampaignList(),
-          _buildPage('Kalinq'),
+          KalinqHome(),
           _buildPage('Profile'),
         ],
       ),

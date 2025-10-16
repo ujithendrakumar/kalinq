@@ -25,7 +25,8 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: EdgeInsets.all(2),
       width: width,
       height: height,
       child: ElevatedButton(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../utils/theme.dart';
 
 class CustomBackButton extends StatelessWidget {
-  CustomBackButton({super.key});
+  const CustomBackButton({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +15,7 @@ class CustomBackButton extends StatelessWidget {
             color: jyellowLightColor,
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Image.asset('assets/icons/left.png', scale: 3),
+          child: Image.asset('assets/icons/left.png', scale: 3.5),
         ),
       ),
     );

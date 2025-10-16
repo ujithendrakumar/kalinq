@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:kalinq/components/custom_formfield.dart';
+import 'package:kalinq/routes.dart';
 import 'package:kalinq/utils/theme.dart';
 
 import '../components/brand_person_box.dart';
@@ -115,7 +116,7 @@ class _BrandDashboardState extends State<BrandDashboard> {
                     flex: 1,
                     child: IconButton(
                       onPressed: () {
-                        Get.toNamed('/notifications');
+                        Get.toNamed(AppRoutes.notificationScreen);
                       },
                       icon: const Icon(
                         FeatherIcons.bell,

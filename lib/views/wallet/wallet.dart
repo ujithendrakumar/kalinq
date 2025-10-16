@@ -1,6 +1,9 @@
 // ...existing code...
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kalinq/components/custom_button.dart';
+import 'package:kalinq/utils/theme.dart';
 
 class Wallet extends StatefulWidget {
   const Wallet({super.key});
@@ -97,18 +100,9 @@ class _WalletState extends State<Wallet> {
                           ),
                         ),
                         SizedBox(height: 8),
-                        Text(
-                          'Withdraw',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xFFE74C3C),
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
                       ],
                     ),
                   ),
-                  const SizedBox(width: 16),
                   const Text(
                     '₹15,901',
                     style: TextStyle(
@@ -120,7 +114,37 @@ class _WalletState extends State<Wallet> {
                   ),
                 ],
               ),
-              const SizedBox(height: 18),
+              Row(
+                children: [
+                  //
+                  Expanded(
+                    child: CustomButton(
+                      text: "Add Fund",
+                      height: 30,
+                      backgroundColor: Colors.green,
+                      fontSize: 12,
+                      textColor: jwhiteColor,
+                      onPressed: () {
+                        Get.toNamed('/wallet/add');
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 15),
+                  Expanded(
+                    child: CustomButton(
+                      text: "Withdraw",
+                      height: 30,
+                      backgroundColor: Colors.red,
+                      fontSize: 12,
+                      textColor: jwhiteColor,
+                      onPressed: () {
+                        Get.toNamed('/wallet/withdraw');
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
               // Summary Card
               Container(
                 decoration: BoxDecoration(
@@ -243,7 +267,7 @@ class _WalletState extends State<Wallet> {
           color: const Color(0xFFEE4B2B),
           borderRadius: BorderRadius.circular(14),
           image: const DecorationImage(
-            image: AssetImage('assets/images/banner_overlay.png'),
+            image: AssetImage('assets/images/splash.png'),
             fit: BoxFit.cover,
             opacity: 0.06,
           ),

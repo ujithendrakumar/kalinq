@@ -118,7 +118,10 @@ class _CampaignListState extends State<CampaignList> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print("Clicked Notification Icons");
+                        Get.toNamed(AppRoutes.notificationScreen);
+                      },
                       icon: badges.Badge(
                         offset: Offset(4, -4),
                         label: Text(''),

@@ -5,6 +5,7 @@ import 'package:kalinq/utils/theme.dart';
 
 import '../campaign/capaigns_list.dart';
 import '../kalinq/kalinq_home.dart';
+import '../profile/user_profile.dart';
 import '../wallet/wallet.dart';
 import 'home/dashboard.dart';
 
@@ -73,7 +74,7 @@ class _BrandHomeScreenState extends State<BrandHomeScreen> {
           Wallet(),
           CampaignList(),
           KalinqHome(),
-          _buildPage('Profile'),
+          UserProfile(),
         ],
       ),
       bottomNavigationBar: Container(

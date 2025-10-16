@@ -14,6 +14,8 @@ import 'views/campaign/select_creator.dart';
 import 'views/home_screen.dart';
 import 'views/kalinq/pay_amount.dart';
 import 'views/login_screen.dart';
+import 'views/profile/edit_profile.dart';
+import 'views/profile/user_profile.dart';
 import 'views/signup_screen.dart';
 import 'views/deside_screen.dart';
 import 'views/forgot_password.dart';
@@ -74,6 +76,9 @@ class AppRoutes {
   static const String walletWithdraw = '/wallet/withdraw';
   static const String payAmountToKalinq = '/kalinq/pay';
   static const String editorFormPage = '/kalinq/ediotor/form';
+  //user
+  static const String userProfile = '/user/profile';
+  static const String editProfile = '/user/profile/edit';
 
   static final routes = [
     GetPage(name: splash, page: () => const SplashScreen()),
@@ -117,6 +122,9 @@ class AppRoutes {
     GetPage(name: editorFormPage, page: () => const EditorFormPage()),
     GetPage(name: campaignsDetails, page: () => const CampaignDetails()),
     GetPage(name: notificationScreen, page: () => const NotificationScreen()),
+
+    GetPage(name: userProfile, page: () => const UserProfile()),
+    GetPage(name: editProfile, page: () => const EditProfile()),
 
     GetPage(
       name: bookingSuccess,

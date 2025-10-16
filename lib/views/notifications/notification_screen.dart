@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:kalinq/components/custom_back.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -11,21 +12,7 @@ class NotificationScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 254, 211, 199),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 16,
-            ),
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
+        leading: CustomBackButton(),
         title: const Text(
           'Notifications',
           style: TextStyle(

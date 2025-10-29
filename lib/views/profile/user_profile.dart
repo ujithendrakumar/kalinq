@@ -36,13 +36,15 @@ class _UserProfileState extends State<UserProfile> {
     return Scaffold(
       backgroundColor: jwhiteColor,
       // appBar: AppBar(automaticallyImplyLeading: false),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: themeColor,
-        onPressed: () {
-          // Get.toNamed(AppRoutes.createCampaign);
-        },
-        child: Icon(Icons.add, color: Colors.white),
-      ),
+      floatingActionButton: isAboutTab
+          ? null
+          : FloatingActionButton(
+              backgroundColor: themeColor,
+              onPressed: () {
+                // Get.toNamed(AppRoutes.createCampaign);
+              },
+              child: Icon(Icons.add, color: Colors.white),
+            ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -272,7 +274,8 @@ class _UserProfileState extends State<UserProfile> {
                         ),
                       )
                     : Container(
-                        height: MediaQuery.of(context).size.height * 0.7,
+                        margin: EdgeInsets.only(bottom: 100),
+                        height: MediaQuery.of(context).size.height * 0.6,
                         padding: const EdgeInsets.symmetric(horizontal: 28),
                         child: MasonryGridView.count(
                           crossAxisCount: 2,
@@ -295,6 +298,7 @@ class _UserProfileState extends State<UserProfile> {
                           },
                         ),
                       ),
+                SizedBox(height: 108),
               ],
             ),
           ),
